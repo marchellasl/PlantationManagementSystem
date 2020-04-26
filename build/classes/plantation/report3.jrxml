@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ff015e2f-115b-41eb-9256-d1c31ee0a8bb">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="102"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM `kegiatan` JOIN `tanaman` ON `kegiatan`.`id_tanaman` = `tanaman`.`id_tanaman` JOIN `lahan` ON `kegiatan`.`id_lahan` = `lahan`.`id_lahan` JOIN `biaya` ON `kegiatan`.`id_kegiatan` = `biaya`.`id_kegiatan`;]]>
+	</queryString>
+	<field name="id_kegiatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_kegiatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_tanaman" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="biaya_bibit" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="biaya_kegiatan" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ukuran_lahan" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_biaya" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="107" y="18" width="331" height="51" uuid="a8007cec-c9f0-40ec-9ad9-31a401eabcc6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[Laporan Biaya Penanaman]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="438" y="13" width="117" height="20" uuid="0ccdbe3d-d99e-4c88-994f-e8245eb15f16"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="28" uuid="9aa85238-e41e-4379-8faf-e32baf337c9d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<line>
+					<reportElement x="64" y="0" width="1" height="28" uuid="c75de6fd-7b80-4720-9138-d1ae3eefa197"/>
+				</line>
+				<line>
+					<reportElement x="141" y="0" width="1" height="28" uuid="d7b9a545-7f1a-459a-91fa-a4e373e900a0"/>
+				</line>
+				<staticText>
+					<reportElement x="2" y="6" width="65" height="17" uuid="1558502d-a1fa-4232-9d2c-238df095ea77"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[ID Kegiatan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="72" y="6" width="69" height="17" uuid="8c766164-de46-41d7-80a3-943b0d835683"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Tgl Kegiatan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="171" y="0" width="37" height="27" uuid="c43724fe-c0e3-4110-8450-60da555e40a9"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Nama]]></text>
+				</staticText>
+				<line>
+					<reportElement x="226" y="0" width="1" height="28" uuid="4b47fb11-35ab-4a7a-b47d-aa4e4878ecaa"/>
+				</line>
+				<staticText>
+					<reportElement x="236" y="0" width="101" height="28" uuid="564d30c1-c97a-4ff4-922b-7acc23fca56a"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Harga Bibit]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="246" y="13" width="100" height="15" uuid="058ab58d-d3b6-4a4e-9d42-51532ac81c78"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[(Rp/m2)]]></text>
+				</staticText>
+				<line>
+					<reportElement x="302" y="0" width="1" height="28" uuid="55a48dff-5ca9-44de-9d03-5ab0f24eccf2"/>
+				</line>
+				<staticText>
+					<reportElement x="326" y="1" width="100" height="27" uuid="bd866c85-5b2e-4c08-91a3-22d2718257c4"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Luas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="312" y="13" width="100" height="15" uuid="32508026-51af-4f7c-bffd-3905b5415506"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Lahan (m2)]]></text>
+				</staticText>
+				<line>
+					<reportElement x="377" y="0" width="1" height="28" uuid="967c8238-912e-4d6e-a9ae-6088eb15a0c8"/>
+				</line>
+				<staticText>
+					<reportElement x="401" y="1" width="100" height="27" uuid="b2faa76e-7b31-4f86-bebf-5f2791b1b2dc"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Biaya]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="164" y="13" width="100" height="14" uuid="ca114ed1-a6b4-44fc-9da1-df5ad61d8c2f"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Tanaman]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="385" y="13" width="100" height="15" uuid="e7445bd6-cd64-4100-bdcb-e015df88e29f"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Kegiatan (Rp)]]></text>
+				</staticText>
+				<line>
+					<reportElement x="459" y="0" width="1" height="28" uuid="7b384f93-8ef5-4d3b-8eb1-631053de775d"/>
+				</line>
+				<staticText>
+					<reportElement x="469" y="8" width="86" height="20" uuid="e7d04398-585d-43b2-bc6a-2fc221e9690b"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Total Biaya (Rp)]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="28" uuid="3f794dea-9ff4-41ca-8d87-50afabf58521"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<line>
+					<reportElement x="64" y="0" width="1" height="28" uuid="82a29b12-0cb4-4160-895e-1e0db717a95c"/>
+				</line>
+				<line>
+					<reportElement x="141" y="0" width="1" height="28" uuid="8763b2f1-b77d-4b4d-9464-7601889bd3a9"/>
+				</line>
+				<textField>
+					<reportElement x="19" y="8" width="92" height="20" uuid="dcbc5777-b709-4384-b7d0-afed5270a516"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_kegiatan}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="76" y="8" width="107" height="20" uuid="989b31c2-6df3-4c65-86eb-15a714097a72"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tanggal_kegiatan}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="151" y="8" width="100" height="20" uuid="cf52698b-4621-4157-8427-b56ef3c2be43"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nama_tanaman}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="226" y="0" width="1" height="28" uuid="d023bd30-76c3-4a66-8f18-80cf0a3818af"/>
+				</line>
+				<textField>
+					<reportElement x="252" y="8" width="100" height="20" uuid="2fde4fe1-c259-4547-9cd8-cad2821444a8"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{biaya_bibit}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="302" y="0" width="1" height="28" uuid="db7ef497-7cba-40fa-87f6-f329c2ff3173"/>
+				</line>
+				<textField>
+					<reportElement x="324" y="8" width="100" height="20" uuid="75e5f078-5ae7-4c08-9d8d-929bf2bd4c62"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ukuran_lahan}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="377" y="0" width="1" height="28" uuid="8f33ee10-93ab-4bfc-99cb-c8c33fdd718f"/>
+				</line>
+				<line>
+					<reportElement x="459" y="0" width="1" height="28" uuid="c3a81b9b-7f1e-461d-9d1e-29accd6fcd6f"/>
+				</line>
+				<textField>
+					<reportElement x="467" y="7" width="88" height="21" uuid="52dffe4c-116f-42e2-a8c2-177f5d65f31d"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{total_biaya}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="393" y="8" width="100" height="20" uuid="a9c0dd99-3a4a-469d-bd8b-76d41ccba193"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{biaya_kegiatan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

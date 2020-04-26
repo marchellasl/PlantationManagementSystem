@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3b45b02e-cbb9-4fc5-8270-e781eaac63c6">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM `kegiatan` JOIN `tanaman` ON `kegiatan`.`id_tanaman` = `tanaman`.`id_tanaman` JOIN `detail_tanaman` ON `kegiatan`.`id_kegiatan` = `detail_tanaman`.`id_kegiatan` JOIN `lahan` ON `kegiatan`.`id_lahan` = `lahan`.`id_lahan`;]]>
+	</queryString>
+	<field name="id_kegiatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_tanaman" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ukuran_lahan" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_kegiatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="umur_tanaman" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="137" y="17" width="282" height="62" uuid="53539893-3b25-4501-a75c-e89aef586263"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[Laporan Umur Tanaman]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="55" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="419" y="22" width="134" height="20" uuid="924f67af-fd1c-4080-8c8c-f8ea9fe6fe86"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="19" y="4" width="100" height="16" uuid="f1da3a44-cdea-4b66-a6db-5ad0ab378225"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[ID Kegiatan]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="0" width="555" height="23" uuid="0ff781a0-3ae5-4a55-a8df-b036044449e8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<line>
+					<reportElement x="96" y="0" width="1" height="23" uuid="ee7c953b-6c13-41f6-97eb-36b785a4e5fc"/>
+				</line>
+				<staticText>
+					<reportElement x="116" y="4" width="100" height="19" uuid="d0158236-b318-4f1d-95f4-b895b0630005"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Nama Tanaman]]></text>
+				</staticText>
+				<line>
+					<reportElement x="211" y="0" width="1" height="23" uuid="a576d2f6-376e-4114-80d5-57a75c47c438"/>
+				</line>
+				<staticText>
+					<reportElement x="234" y="4" width="100" height="19" uuid="5a83759e-61b3-4d4c-9c47-45772e682ec4"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Luas Lahan (m2)]]></text>
+				</staticText>
+				<line>
+					<reportElement x="340" y="0" width="1" height="23" uuid="8ba3f246-3009-4ad7-bbfb-35a2d48a2bb3"/>
+				</line>
+				<staticText>
+					<reportElement x="357" y="4" width="70" height="19" uuid="40042d40-7060-43b1-9d59-29d5a76b9da6"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Tgl Kegiatan]]></text>
+				</staticText>
+				<line>
+					<reportElement x="434" y="0" width="1" height="23" uuid="6a93f7e3-ef0d-424d-9e62-a2d97a7c764a"/>
+				</line>
+				<staticText>
+					<reportElement x="462" y="4" width="67" height="16" uuid="f6a557d1-bcc9-42a7-b28e-6ed0fe423111"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Umur (Hari)]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="37" y="4" width="100" height="20" uuid="7a525adf-2101-4529-80e8-3da1110f1832"/>
+				<textFieldExpression><![CDATA[$F{id_kegiatan}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="0" width="555" height="23" uuid="22dc17bd-820b-4d12-9868-c283febf7a4b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<line>
+					<reportElement x="96" y="0" width="1" height="23" uuid="2e87a6c2-cd7f-499a-ae92-f4251eb13d6c"/>
+				</line>
+				<textField>
+					<reportElement x="133" y="3" width="100" height="20" uuid="810f74e5-d54a-4241-b923-5d7a2147761b"/>
+					<textFieldExpression><![CDATA[$F{nama_tanaman}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="211" y="0" width="1" height="23" uuid="a3dd2d58-d3af-4f02-b307-eafad6b122a2"/>
+				</line>
+				<textField>
+					<reportElement x="266" y="3" width="97" height="20" uuid="ddf06d38-cd66-40fe-8663-2d95905b6ef4"/>
+					<textFieldExpression><![CDATA[$F{ukuran_lahan}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="340" y="0" width="1" height="23" uuid="b0d35e15-5912-424d-8309-46136cfed29a"/>
+				</line>
+				<textField>
+					<reportElement x="362" y="3" width="100" height="20" uuid="a1a25926-eea1-43e7-9084-c67380d1bae9"/>
+					<textFieldExpression><![CDATA[$F{tanggal_kegiatan}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="434" y="0" width="1" height="23" uuid="cdcbfc77-bd2b-4a1b-a434-3178aa6cc087"/>
+				</line>
+				<textField>
+					<reportElement x="484" y="3" width="69" height="20" uuid="62b115fd-7941-4ccb-b703-c39798da01f4"/>
+					<textFieldExpression><![CDATA[$F{umur_tanaman}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
